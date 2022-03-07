@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: 5c2bc2f4d891ae042acf21ad228d125b
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    UnityEngine_UI_1 = require(\"UnityEngine.UI\");\r\nconst UnityEngine = require(\"UnityEngine\");\r\nclass
+    FadeController extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start()
+    {\r\n        this.image = this.GetComponent($typeof(UnityEngine_UI_1.Image));\r\n       
+    this.timer = 0;\r\n    }\r\n    Update() {\r\n        this.timer += UnityEngine.Time.deltaTime;\r\n       
+    if (this.timer > 0.005) {\r\n            var color = this.image.color;\r\n           
+    if (color.a > 0) {\r\n                color.a -= UnityEngine.Time.deltaTime;\r\n           
+    }\r\n            this.image.color = color;\r\n            this.timer = 0;\r\n       
+    }\r\n    }\r\n}\r\nexports.default = FadeController;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRmFkZUNvbnRyb2xsZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJGYWRlQ29udHJvbGxlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGlEQUFxRDtBQUNyRCxtREFBc0M7QUFDdEMsMkNBQTJDO0FBRTNDLE1BQXFCLGNBQWUsU0FBUSxxQ0FBcUI7SUFLN0QsS0FBSztRQUNELElBQUksQ0FBQyxLQUFLLEdBQUcsSUFBSSxDQUFDLFlBQVksU0FBQyxzQkFBSyxFQUFHLENBQUM7UUFDeEMsSUFBSSxDQUFDLEtBQUssR0FBRyxDQUFDLENBQUM7SUFDbkIsQ0FBQztJQUVELE1BQU07UUFDRixJQUFJLENBQUMsS0FBSyxJQUFLLFdBQVcsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDO1FBQzFDLElBQUksSUFBSSxDQUFDLEtBQUssR0FBRyxLQUFLLEVBQUU7WUFDcEIsSUFBSSxLQUFLLEdBQXNCLElBQUksQ0FBQyxLQUFLLENBQUMsS0FBSyxDQUFDO1lBRWhELElBQUksS0FBSyxDQUFDLENBQUMsR0FBRyxDQUFDLEVBQUU7Z0JBQ2IsS0FBSyxDQUFDLENBQUMsSUFBSSxXQUFXLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQzthQUN6QztZQUVELElBQUksQ0FBQyxLQUFLLENBQUMsS0FBSyxHQUFHLEtBQUssQ0FBQztZQUV6QixJQUFJLENBQUMsS0FBSyxHQUFHLENBQUMsQ0FBQztTQUNsQjtJQUNMLENBQUM7Q0FDSjtBQXhCRCxpQ0F3QkMifQ==","assetPath":"Assets/ZepetoScript/FadeController.ts","manifest":{"properties":[],"name":"FadeController","description":""},"isCompiled":true}'
+  typescriptHash: 019a01e2d8467f09c379590df7eb9a47

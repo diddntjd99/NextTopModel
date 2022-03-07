@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: dde4aadee8b63e44b986fd0ad9bb3236
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    ClientStarter_1 = require(\"./ClientStarter\");\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nclass
+    ItemCollision extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start()
+    {\r\n        this.audioSource = this.audioObj.GetComponent($typeof(UnityEngine_1.AudioSource));\r\n   
+    }\r\n    Update() {\r\n        this.gameObject.transform.Rotate(0, 0.5, 0);\r\n   
+    }\r\n    OnTriggerEnter(other) {\r\n        if (other.gameObject.CompareTag(\"Player\"))
+    {\r\n            this.audioSource.Play();\r\n            UnityEngine_1.GameObject.Destroy(this.gameObject);\r\n           
+    this.room = this.obj.GetComponent($typeof(ClientStarter_1.default)).getRoom();\r\n           
+    this.room.Send(\"deleteItemServer\", this.gameObject.name);\r\n            var
+    score = this.obj.GetComponent($typeof(ClientStarter_1.default)).getScore();\r\n           
+    if (this.gameObject == this.item[0]) {\r\n                score += 2;\r\n           
+    }\r\n            else if (this.gameObject == this.item[1]) {\r\n               
+    score += 5;\r\n            }\r\n            else if (this.gameObject == this.item[2])
+    {\r\n                var random = UnityEngine_1.Random.Range(1, 11);\r\n               
+    score += random;\r\n            }\r\n            this.obj.GetComponent($typeof(ClientStarter_1.default)).setScore(score);\r\n       
+    }\r\n    }\r\n}\r\nexports.default = ItemCollision;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiSXRlbUNvbGxpc2lvbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkl0ZW1Db2xsaXNpb24udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxpREFBcUQ7QUFFckQsbURBQTRDO0FBQzVDLDZDQUE2RDtBQUU3RCxNQUFxQixhQUFjLFNBQVEscUNBQXFCO0lBUTVELEtBQUs7UUFDRCxJQUFJLENBQUMsV0FBVyxHQUFHLElBQUksQ0FBQyxRQUFRLENBQUMsWUFBWSxTQUFDLHlCQUFXLEVBQUcsQ0FBQztJQUNqRSxDQUFDO0lBRUQsTUFBTTtRQUNGLElBQUksQ0FBQyxVQUFVLENBQUMsU0FBUyxDQUFDLE1BQU0sQ0FBQyxDQUFDLEVBQUUsR0FBRyxFQUFFLENBQUMsQ0FBQyxDQUFDO0lBQ2hELENBQUM7SUFFRCxjQUFjLENBQUMsS0FBSztRQUNoQixJQUFHLEtBQUssQ0FBQyxVQUFVLENBQUMsVUFBVSxDQUFDLFFBQVEsQ0FBQyxFQUFFO1lBQ3RDLElBQUksQ0FBQyxXQUFXLENBQUMsSUFBSSxFQUFFLENBQUM7WUFFeEIsd0JBQVUsQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxDQUFDO1lBRXBDLElBQUksQ0FBQyxJQUFJLEdBQUcsSUFBSSxDQUFDLEdBQUcsQ0FBQyxZQUFZLFNBQUMsdUJBQWEsR0FBSSxPQUFPLEVBQUUsQ0FBQztZQUM3RCxJQUFJLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxrQkFBa0IsRUFBRSxJQUFJLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxDQUFDO1lBRXpELElBQUksS0FBSyxHQUFHLElBQUksQ0FBQyxHQUFHLENBQUMsWUFBWSxTQUFDLHVCQUFhLEdBQUksUUFBUSxFQUFFLENBQUM7WUFDOUQsSUFBRyxJQUFJLENBQUMsVUFBVSxJQUFJLElBQUksQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUFDLEVBQUU7Z0JBQ2hDLEtBQUssSUFBSSxDQUFDLENBQUM7YUFDZDtpQkFBTSxJQUFHLElBQUksQ0FBQyxVQUFVLElBQUksSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUMsRUFBRTtnQkFDdkMsS0FBSyxJQUFJLENBQUMsQ0FBQzthQUNkO2lCQUFNLElBQUcsSUFBSSxDQUFDLFVBQVUsSUFBSSxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUMsQ0FBQyxFQUFFO2dCQUN2QyxJQUFJLE1BQU0sR0FBRyxvQkFBTSxDQUFDLEtBQUssQ0FBQyxDQUFDLEVBQUUsRUFBRSxDQUFDLENBQUM7Z0JBQ2pDLEtBQUssSUFBSSxNQUFNLENBQUM7YUFDbkI7WUFDRCxJQUFJLENBQUMsR0FBRyxDQUFDLFlBQVksU0FBQyx1QkFBYSxHQUFJLFFBQVEsQ0FBQyxLQUFLLENBQUMsQ0FBQztTQUMxRDtJQUNMLENBQUM7Q0FDSjtBQXJDRCxnQ0FxQ0MifQ==","assetPath":"Assets/ZepetoScript/ItemCollision.ts","manifest":{"properties":[{"assembly":"UnityEngine.CoreModule","name":"obj","type":"UnityEngine.GameObject","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"audioObj","type":"UnityEngine.GameObject","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"item","type":"UnityEngine.GameObject[]","isArray":true,"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"ItemCollision","description":""},"isCompiled":true}'
+  typescriptHash: 4bbce64aa871504415e538e8266b5559

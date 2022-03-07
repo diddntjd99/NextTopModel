@@ -1,0 +1,41 @@
+fileFormatVersion: 2
+guid: 7aa591d24f404b24995c36c924244d6b
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    ClientStarter_1 = require(\"./ClientStarter\");\r\nconst UnityEngine = require(\"UnityEngine\");\r\nclass
+    OpeningController extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start()
+    {\r\n        this.skipButton.gameObject.SetActive(true);\r\n        this.flag
+    = false;\r\n        this.index = -1;\r\n        this.timer = 0;\r\n        this.delay
+    = 2;\r\n        this.room = this.obj.GetComponent($typeof(ClientStarter_1.default)).getRoom();\r\n       
+    this.skipButton.onClick.AddListener(() => this.openingSkip(this.room, this.skipButton.gameObject));\r\n   
+    }\r\n    Update() {\r\n        this.timer += UnityEngine.Time.deltaTime;\r\n       
+    if (this.flag) {\r\n            this.opening[this.index].transform.position =
+    UnityEngine.Vector3.MoveTowards(this.opening[this.index].transform.position,
+    this.openingGoal.transform.position, 0.4);\r\n        }\r\n        if (this.timer
+    > this.delay) {\r\n            this.flag = true;\r\n            this.index++;\r\n           
+    this.timer = 0;\r\n            if (this.index == 2) {\r\n                this.delay
+    = 6;\r\n            }\r\n            else {\r\n                this.delay = 4;\r\n           
+    }\r\n            if (this.index == this.opening.length) {\r\n               
+    this.room.Send(\"openingFinish\", \"\");\r\n                this.flag = false;\r\n           
+    }\r\n        }\r\n    }\r\n    openingSkip(room, skipButton) {\r\n        room.Send(\"openingFinish\",
+    \"\");\r\n        skipButton.gameObject.SetActive(false);\r\n    }\r\n}\r\nexports.default
+    = OpeningController;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiT3BlbmluZ0NvbnRyb2xsZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJPcGVuaW5nQ29udHJvbGxlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGlEQUFxRDtBQUdyRCxtREFBNEM7QUFDNUMsMkNBQTJDO0FBRzNDLE1BQXFCLGlCQUFrQixTQUFRLHFDQUFxQjtJQWFoRSxLQUFLO1FBQ0QsSUFBSSxDQUFDLFVBQVUsQ0FBQyxVQUFVLENBQUMsU0FBUyxDQUFDLElBQUksQ0FBQyxDQUFDO1FBRTNDLElBQUksQ0FBQyxJQUFJLEdBQUcsS0FBSyxDQUFDO1FBQ2xCLElBQUksQ0FBQyxLQUFLLEdBQUcsQ0FBQyxDQUFDLENBQUM7UUFDaEIsSUFBSSxDQUFDLEtBQUssR0FBRyxDQUFDLENBQUM7UUFDZixJQUFJLENBQUMsS0FBSyxHQUFHLENBQUMsQ0FBQztRQUVmLElBQUksQ0FBQyxJQUFJLEdBQUcsSUFBSSxDQUFDLEdBQUcsQ0FBQyxZQUFZLFNBQUMsdUJBQWEsR0FBSSxPQUFPLEVBQUUsQ0FBQztRQUM3RCxJQUFJLENBQUMsVUFBVSxDQUFDLE9BQU8sQ0FBQyxXQUFXLENBQUMsR0FBRyxFQUFFLENBQUMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLENBQUMsSUFBSSxFQUFFLElBQUksQ0FBQyxVQUFVLENBQUMsVUFBVSxDQUFDLENBQUMsQ0FBQztJQUN2RyxDQUFDO0lBRUQsTUFBTTtRQUNGLElBQUksQ0FBQyxLQUFLLElBQUksV0FBVyxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUM7UUFDekMsSUFBRyxJQUFJLENBQUMsSUFBSSxFQUFFO1lBQ1YsSUFBSSxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDLENBQUMsU0FBUyxDQUFDLFFBQVEsR0FBRyxXQUFXLENBQUMsT0FBTyxDQUFDLFdBQVcsQ0FBQyxJQUFJLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsQ0FBQyxTQUFTLENBQUMsUUFBUSxFQUFFLElBQUksQ0FBQyxXQUFXLENBQUMsU0FBUyxDQUFDLFFBQVEsRUFBRSxHQUFHLENBQUMsQ0FBQztTQUN4SztRQUNELElBQUcsSUFBSSxDQUFDLEtBQUssR0FBRyxJQUFJLENBQUMsS0FBSyxFQUFFO1lBQ3hCLElBQUksQ0FBQyxJQUFJLEdBQUcsSUFBSSxDQUFDO1lBQ2pCLElBQUksQ0FBQyxLQUFLLEVBQUUsQ0FBQztZQUNiLElBQUksQ0FBQyxLQUFLLEdBQUcsQ0FBQyxDQUFDO1lBRWYsSUFBRyxJQUFJLENBQUMsS0FBSyxJQUFJLENBQUMsRUFBRTtnQkFDaEIsSUFBSSxDQUFDLEtBQUssR0FBRyxDQUFDLENBQUM7YUFDbEI7aUJBQU07Z0JBQ0gsSUFBSSxDQUFDLEtBQUssR0FBRyxDQUFDLENBQUM7YUFDbEI7WUFFRCxJQUFHLElBQUksQ0FBQyxLQUFLLElBQUksSUFBSSxDQUFDLE9BQU8sQ0FBQyxNQUFNLEVBQUU7Z0JBQ2xDLElBQUksQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLGVBQWUsRUFBRSxFQUFFLENBQUMsQ0FBQztnQkFDcEMsSUFBSSxDQUFDLElBQUksR0FBRyxLQUFLLENBQUM7YUFDckI7U0FDSjtJQUNMLENBQUM7SUFFRCxXQUFXLENBQUMsSUFBUyxFQUFFLFVBQWlDO1FBQ3BELElBQUksQ0FBQyxJQUFJLENBQUMsZUFBZSxFQUFFLEVBQUUsQ0FBQyxDQUFDO1FBRS9CLFVBQVUsQ0FBQyxVQUFVLENBQUMsU0FBUyxDQUFDLEtBQUssQ0FBQyxDQUFDO0lBQzNDLENBQUM7Q0FDSjtBQXJERCxvQ0FxREMifQ==","assetPath":"Assets/ZepetoScript/OpeningController.ts","manifest":{"properties":[{"assembly":"UnityEngine.CoreModule","name":"opening","type":"UnityEngine.GameObject[]","isArray":true,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"openingGoal","type":"UnityEngine.GameObject","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"obj","type":"UnityEngine.GameObject","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.UI","name":"skipButton","type":"UnityEngine.UI.Button","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"OpeningController","description":""},"isCompiled":true}'
+  typescriptHash: 679d37cef331ab4a4f20522cca2ac856

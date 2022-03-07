@@ -1,0 +1,36 @@
+fileFormatVersion: 2
+guid: 1ab6f80d9bd19fe429c747fee752c1de
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    ClientStarter_1 = require(\"./ClientStarter\");\r\nconst UnityEngine = require(\"UnityEngine\");\r\nclass
+    SlowPadController extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Update()
+    {\r\n        this.transform.position = UnityEngine.Vector3.MoveTowards(this.transform.position,
+    this.goal.transform.position, 0.02);\r\n    }\r\n    OnTriggerEnter(other) {\r\n       
+    if (other.gameObject.CompareTag(\"Player\")) {\r\n            this.obj.GetComponent($typeof(ClientStarter_1.default)).getCharacter().character.additionalRunSpeed
+    -= 3;\r\n            this.obj.GetComponent($typeof(ClientStarter_1.default)).getCharacter().character.additionalWalkSpeed
+    -= 3;\r\n            this.obj.GetComponent($typeof(ClientStarter_1.default)).getCharacter().character.additionalJumpPower
+    -= 3;\r\n        }\r\n    }\r\n    OnTriggerExit(other) {\r\n        if (other.gameObject.CompareTag(\"Player\"))
+    {\r\n            this.obj.GetComponent($typeof(ClientStarter_1.default)).getCharacter().character.additionalRunSpeed
+    += 3;\r\n            this.obj.GetComponent($typeof(ClientStarter_1.default)).getCharacter().character.additionalWalkSpeed
+    += 3;\r\n            this.obj.GetComponent($typeof(ClientStarter_1.default)).getCharacter().character.additionalJumpPower
+    += 3;\r\n        }\r\n    }\r\n}\r\nexports.default = SlowPadController;\r\n//#
+    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiU2xvd1BhZENvbnRyb2xsZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJTbG93UGFkQ29udHJvbGxlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGlEQUFxRDtBQUNyRCxtREFBNEM7QUFDNUMsMkNBQTJDO0FBRTNDLE1BQXFCLGlCQUFrQixTQUFRLHFDQUFxQjtJQUloRSxNQUFNO1FBQ0YsSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLEdBQUcsV0FBVyxDQUFDLE9BQU8sQ0FBQyxXQUFXLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLEVBQUUsSUFBSSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxFQUFFLElBQUksQ0FBQyxDQUFDO0lBQzNILENBQUM7SUFFRCxjQUFjLENBQUMsS0FBSztRQUNoQixJQUFJLEtBQUssQ0FBQyxVQUFVLENBQUMsVUFBVSxDQUFDLFFBQVEsQ0FBQyxFQUFFO1lBQ3ZDLElBQUksQ0FBQyxHQUFHLENBQUMsWUFBWSxTQUFDLHVCQUFhLEdBQUksWUFBWSxFQUFFLENBQUMsU0FBUyxDQUFDLGtCQUFrQixJQUFJLENBQUMsQ0FBQztZQUN4RixJQUFJLENBQUMsR0FBRyxDQUFDLFlBQVksU0FBQyx1QkFBYSxHQUFJLFlBQVksRUFBRSxDQUFDLFNBQVMsQ0FBQyxtQkFBbUIsSUFBSSxDQUFDLENBQUM7WUFDekYsSUFBSSxDQUFDLEdBQUcsQ0FBQyxZQUFZLFNBQUMsdUJBQWEsR0FBSSxZQUFZLEVBQUUsQ0FBQyxTQUFTLENBQUMsbUJBQW1CLElBQUksQ0FBQyxDQUFDO1NBQzVGO0lBQ0wsQ0FBQztJQUVELGFBQWEsQ0FBQyxLQUFLO1FBQ2YsSUFBSSxLQUFLLENBQUMsVUFBVSxDQUFDLFVBQVUsQ0FBQyxRQUFRLENBQUMsRUFBRTtZQUN2QyxJQUFJLENBQUMsR0FBRyxDQUFDLFlBQVksU0FBQyx1QkFBYSxHQUFJLFlBQVksRUFBRSxDQUFDLFNBQVMsQ0FBQyxrQkFBa0IsSUFBSSxDQUFDLENBQUM7WUFDeEYsSUFBSSxDQUFDLEdBQUcsQ0FBQyxZQUFZLFNBQUMsdUJBQWEsR0FBSSxZQUFZLEVBQUUsQ0FBQyxTQUFTLENBQUMsbUJBQW1CLElBQUksQ0FBQyxDQUFDO1lBQ3pGLElBQUksQ0FBQyxHQUFHLENBQUMsWUFBWSxTQUFDLHVCQUFhLEdBQUksWUFBWSxFQUFFLENBQUMsU0FBUyxDQUFDLG1CQUFtQixJQUFJLENBQUMsQ0FBQztTQUM1RjtJQUNMLENBQUM7Q0FDSjtBQXZCRCxvQ0F1QkMifQ==","assetPath":"Assets/ZepetoScript/SlowPadController.ts","manifest":{"properties":[{"assembly":"UnityEngine.CoreModule","name":"obj","type":"UnityEngine.GameObject","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"goal","type":"UnityEngine.GameObject","isArray":false,"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"SlowPadController","description":""},"isCompiled":true}'
+  typescriptHash: 3d6f824495db2d16a879cb5b593697ae
